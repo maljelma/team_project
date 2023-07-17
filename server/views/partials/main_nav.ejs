@@ -1,0 +1,63 @@
+<!-- Main Navigation -->
+  <!-- style as: navbar-dark bg-dark -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <!-- home icon -->
+      <a class="navbar-brand" href="/">COMP229</a>
+      <% if(typeof displayname == 'string' && displayname) {%>
+        <li class="navbar-text"> <i class= "fas fa-lg fa-user"></i> Welcome, <%= displayname %></li>
+      <% } %>
+      <!-- small screens menu button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- Buttons Frame -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <!-- home -->
+          <% if (title == "Home") { %> <!-- set home to active when ejs title is "Home" -->
+          <li class="nav-item active">
+          <% } else { %> <!-- OR set home to unactive when ejs title is anything else -->
+          <li class="nav-item">
+          <% } %>
+            <a class="nav-link" href="/home"><i class="fa-solid fa-house"></i> Home </a>
+          </li>
+
+          <!-- login & logout -->
+          <% if(typeof displayname == 'string' && displayname) {%>
+
+            <!-- resaults -->
+          <% if (title == "Resaults") { %>
+          <li class="nav-item active">
+          <% } else { %>
+          <li class="nav-item">
+          <% } %>
+            <a class="nav-link" href="/survey/resaults/<%= displayname %>"><i class="fa-solid fa-circle-info"></i> Resaults </a>
+          </li>
+
+          <!-- new -->
+          <% if (title == "Create") { %>
+          <li class="nav-item active">
+          <% } else { %>
+          <li class="nav-item">
+          <% } %>
+            <a class="nav-link" href="/survey/create"><i class="fa-solid fa-circle-info"></i> Create </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="auth/logout" class="nav-link">
+              <i class="fas fa-lg fa-sign-out-alt"></i> Logout
+            </a>
+          </li>
+          <% } else { %>
+          <li class="nav-item">
+            <a href="auth/login" class="nav-link">
+              <i class="fas fa-lg fa-sign-in-alt"></i> Login
+            </a>
+          </li>
+          <% } %>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,106 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Content for the Add page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-2 col-md-8">
+            <h1><%= title %></h1>
+
+            <form class= "form" method="POST">
+                
+                <fieldset>
+                    <%= survey.title %> By <%= survey.nameUser %>
+                    <br>
+                    Starts: <%= survey.dateStart %>
+                    <br>
+                    Ends: <%= survey.dateEnd %>
+                    <br>
+                    Count:<%= Count %>
+                    <form action="" method="post">
+                        <!-- INFORMATION -->
+                        <hr>
+                        <!-- Text field -->
+                        <%= survey.textFieldTitle %>
+                        <br>
+                        <hr>
+                        <% TextFieldValues.forEach(element => { %>
+                        <%= element %>
+                        <br>
+                        <% }) %>
+                        <br>
+                        <hr>
+                        <!-- Select -->
+                        <%= survey.selectTitle %>
+                        <br>
+                        <hr>
+                        <%= survey.selectOption1 %> : <%= SelectOptions.option1 %>
+                        <br>
+                        <%= survey.selectOption2 %> : <%= SelectOptions.option2 %>
+                        <br>
+                        <%= survey.selectOption3 %> : <%= SelectOptions.option3 %>
+                        <!-- Rating -->
+                        <hr>
+                        <nav id="headerLabel">
+                        <label for="rating"><%= survey.mcqTitle %></label>
+                        <hr>
+                        <%= survey.mcqTitle1 %>
+                        <br>
+                        <%= survey.mcqOption1 %>: <%= MCQ1.option1 %>
+                        <br>
+                        <%= survey.mcqOption2 %>: <%= MCQ1.option2 %>
+                        <br>
+                        <%= survey.mcqOption3 %>: <%= MCQ1.option3 %>
+                        <br>
+                        <%= survey.mcqOption4 %>: <%= MCQ1.option4 %>
+
+                        <hr>
+                        <%= survey.mcqTitle2 %>
+                        <br>
+                        <%= survey.mcqOption1 %>: <%= MCQ2.option1 %>
+                        <br>
+                        <%= survey.mcqOption2 %>: <%= MCQ2.option2 %>
+                        <br>
+                        <%= survey.mcqOption3 %>: <%= MCQ2.option3 %>
+                        <br>
+                        <%= survey.mcqOption4 %>: <%= MCQ2.option4 %>
+                        <hr>
+                        <%= survey.mcqTitle3 %>
+                        <br>
+                        <%= survey.mcqOption1 %>: <%= MCQ3.option1 %>
+                        <br>
+                        <%= survey.mcqOption2 %>: <%= MCQ3.option2 %>
+                        <br>
+                        <%= survey.mcqOption3 %>: <%= MCQ3.option3 %>
+                        <br>
+                        <%= survey.mcqOption4 %>: <%= MCQ3.option4 %>
+                        <hr>
+                        <%= survey.mcqTitle4 %>
+                        <br>
+                        <%= survey.mcqOption1 %>: <%= MCQ4.option1 %>
+                        <br>
+                        <%= survey.mcqOption2 %>: <%= MCQ4.option2 %>
+                        <br>
+                        <%= survey.mcqOption3 %>: <%= MCQ4.option3 %>
+                        <br>
+                        <%= survey.mcqOption4 %>: <%= MCQ4.option4 %>
+                        <hr>
+
+
+                <button class="btn btn-primary" type="button" onclick="window.print()">
+                    <i class="fas fa-edit"></i> Print 
+                </button>
+
+                <a href="/survey/delete/<%= survey._id %>" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Delete 
+                </a>
+                <br><br><br><br>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include ../partials/bottom_nav.ejs %>
+
+<%- include ../partials/footer.ejs %>

@@ -1,0 +1,27 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to the <%= title %> page</h1>
+      <!-- Repeatable Template Row -->
+      <% for(let count = 0; count < SurveyList.length; count++) { %>
+        <div id="survey_open_button_resaults">View Resaults</div>
+        <a href="/survey/resault/<%= SurveyList[count]._id %>"
+          class="btn btn-sm" 
+          role="button" 
+          id="survey_open_button">
+            <div id="survey_open_button_title"><%= SurveyList[count].title %></div>
+            <div id="survey_open_button_start">Start: <%= SurveyList[count].dateStart %></div>
+            <div id="survey_open_button_end">End:<%= SurveyList[count].dateEnd %></div>
+        </a>
+        <br>
+      <% } %>
+    </div>
+  </main>
+
+<%- include ../partials/bottom_nav.ejs %>
+
+<%- include ../partials/footer.ejs %>

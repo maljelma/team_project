@@ -1,0 +1,10 @@
+/* Custom css goes here */
+#survey_open_button
+{
+    width: 100%;
+    background-color: lightgoldenrodyellow;
+    color: darkslategrey;
+    border: 1px solid lightcoral;
+    font-size: 18pt;
+    margin-bottom: 8px;
+}
