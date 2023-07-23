@@ -19,26 +19,40 @@ module.exports.displayHomePage = (req, res, next) =>
         }
     });
 }
-
+let dateValues = (dateString) =>
+{
+    let dateStringArray = dateString.split('-');
+    let values = {year:0,month:0,day:0}
+    values.year = parseInt(dateStringArray[0])
+    values.month = parseInt(dateStringArray[1])-1
+    values.day = parseInt(dateStringArray[2])
+    return values
+}
 let filterSurveysUsingDateOfToday = (surveyList) => 
 {
+    // array to store selected surveys
     let selectedSurveys = [];
+
+    // get today's date
     let today = new Date();
-    
+
+    // set today's Time to 00:00:00
+    today.setHours(0)
+    today.setMinutes(0)
+    today.setSeconds(0)
+    today.setMilliseconds(0)
+
     surveyList.forEach(element => 
     {  
-        let start = new Date(element.dateStart);
-        let end   = new Date(element.dateEnd);
-        // only if today is in  element dateStart and dateEnd range.
-        if 
-        (
-        (start.getUTCFullYear() <= today.getFullYear()) && 
-        (today.getFullYear() <= end.getUTCFullYear()) &&
-        (start.getUTCMonth() <= today.getMonth()) &&
-        (today.getMonth() <= end.getUTCMonth()) &&
-        (start.getUTCDate() <= today.getDate()) &&
-        (today.getDate() <= end.getUTCDate())
-        )
+
+        // convert string date to objcet with (year,month,day) properties
+        let dateStart = dateValues(element.dateStart);
+        let dateEnd   = dateValues(element.dateEnd);
+        // create date objects for dateStart and dateEnd
+        let start = new Date(dateStart.year,dateStart.month,dateStart.day)
+        let end   = new Date(dateEnd.year,dateEnd.month,dateEnd.day)
+        // only if today is in element dateStart and dateEnd range.
+        if (start <= today && today <= end)
         {
             selectedSurveys.push(element);
         }
