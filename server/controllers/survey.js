@@ -6,19 +6,7 @@ const { text } = require('express');
 /* display create survey page */
 module.exports.displayCreate = (req, res, next) =>
 {
-    if(!req.user)
-    {
-        res.render('auth/login',
-        {
-            title: "Login",
-            messages: req.flash('loginMessage'),
-            displayname: req.user ? req.user.displayname: ''
-        });
-    }
-    else
-    {
-        res.render('survey/create', {title: 'Create', displayname: req.user ? req.user.displayname: ''});
-    }
+    res.render('survey/create', {title: 'Create', displayname: req.user ? req.user.displayname: ''});
 }
 
 /* post create survey page */
