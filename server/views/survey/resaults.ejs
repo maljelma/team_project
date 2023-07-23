@@ -8,7 +8,6 @@
       <h1 class="display-4">Welcome to the <%= title %> page</h1>
       <!-- Repeatable Template Row -->
       <% for(let count = 0; count < SurveyList.length; count++) { %>
-        <div id="survey_open_button_resaults">View Resaults</div>
         <a href="/survey/resault/<%= SurveyList[count]._id %>"
           class="btn btn-sm" 
           role="button" 
