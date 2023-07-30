@@ -5,7 +5,7 @@
   <!-- Main Content -->
   <main class="container">
     <div class="jumbotron">
-      <h1 class="display-4">Welcome to the <%= title %> page</h1>
+      <h1 class="display-4">List of all surveys  created by <%= displayname %></h1>
       <!-- Repeatable Template Row -->
       <% for(let count = 0; count < SurveyList.length; count++) { %>
         <a href="/survey/resault/<%= SurveyList[count]._id %>"

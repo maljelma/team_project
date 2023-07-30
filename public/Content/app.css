@@ -1,4 +1,8 @@
 /* Custom css goes here */
+.display-4
+{
+    margin-bottom: 3%;
+}
 /* Home Page */
 #survey_open_button
 {
