@@ -5,65 +5,73 @@
 <!-- Content for the Add page -->
 <div class="container">
     <div class="row">
-        <div class="offset-md-2 col-md-8">
-            <h1><%= title %></h1>
+        <div class="offset-md-2 col-md-8" id="view-page-content">
 
             <form class= "form" method="POST">
                 
-                <fieldset>
-                    <%= survey.title %> By <%= survey.nameUser %>
-                    <br>
-                    Starts: <%= survey.dateStart %>
-                    <br>
-                    Ends: <%= survey.dateEnd %>
-                    <form action="" method="post">
-                        <!-- INFORMATION -->
-                        <hr>
-                        <!-- Text field -->
-                        <%= survey.textFieldTitle %>
-                        <input placeholder="<%= survey.textFieldPlaceHolder %>" type="text" name="textField" required>
-                        <br>
-            
-                        <!-- Select -->
-                        <%= survey.selectTitle %>
-                        <input type="checkbox" name="selectOption1" id="selectCheckbox"><%= survey.selectOption1 %>
-                        <input type="checkbox" name="selectOption2" id="selectCheckbox"><%= survey.selectOption2 %>
-                        <input type="checkbox" name="selectOption3" id="selectCheckbox"><%= survey.selectOption3 %>
-                
-                        <!-- Rating -->
-                        <nav id="headerLabel">
-                        <label for="rating"><%= survey.mcqTitle %></label>
-                        </nav>
-                        <label for="rating" id="paddingLabel"></label>
-                        <label for="rating" id="ratingLabel"><%= survey.mcqOption1 %></label>
-                        <label for="rating" id="ratingLabel"><%= survey.mcqOption2 %></label>
-                        <label for="rating" id="ratingLabel"><%= survey.mcqOption3 %></label>
-                        <label for="rating" id="ratingLabel"><%= survey.mcqOption4 %></label>
-                        <hr>
-                        <%= survey.mcqTitle1 %>
-                        <input type="radio" value=1 name="mcq1" id="ratingRadioButton" required>
-                        <input type="radio" value=2 name="mcq1" id="ratingRadioButton">
-                        <input type="radio" value=3 name="mcq1" id="ratingRadioButton">
-                        <input type="radio" value=4 name="mcq1" id="ratingRadioButton">
-                        <hr>
-                        <%= survey.mcqTitle2 %>
-                        <input type="radio" value=1 name="mcq2" id="ratingRadioButton" required>
-                        <input type="radio" value=2 name="mcq2" id="ratingRadioButton">
-                        <input type="radio" value=3 name="mcq2" id="ratingRadioButton">
-                        <input type="radio" value=4 name="mcq2" id="ratingRadioButton">
-                        <hr>
-                        <%= survey.mcqTitle3 %>
-                        <input type="radio" value=1 name="mcq3" id="ratingRadioButton" required>
-                        <input type="radio" value=2 name="mcq3" id="ratingRadioButton">
-                        <input type="radio" value=3 name="mcq3" id="ratingRadioButton">
-                        <input type="radio" value=4 name="mcq3" id="ratingRadioButton">
-                        <hr>
-                        <%= survey.mcqTitle4 %>
-                        <input type="radio" value=1 name="mcq4" id="ratingRadioButton" required>
-                        <input type="radio" value=2 name="mcq4" id="ratingRadioButton">
-                        <input type="radio" value=3 name="mcq4" id="ratingRadioButton">
-                        <input type="radio" value=4 name="mcq4" id="ratingRadioButton">
-                        <hr>
+                <div class="view-survey-title"><%= survey.title %></div>
+                <div class="view-survey-owner-name">By: <%= survey.nameUser %></div>
+                <span class="view-survey-start">Starts: <%= survey.dateStart %></span>
+                <span class="view-survey-end">Ends: <%= survey.dateEnd %></span>
+                <!-- INFORMATION -->
+                <br><hr>
+                <!-- Text field -->
+                <span class="view-survey-textfield-title"><%= survey.textFieldTitle %></span>
+                <input placeholder="<%= survey.textFieldPlaceHolder %>" type="text" name="textField" id="textField" required>
+                <br><hr>
+                <!-- Select -->
+                <span class="view-select-title"><%= survey.selectTitle %></span>
+
+                <span class="view-survey-select-option">
+                <input type="checkbox" name="selectOption1" id="selectCheckbox">
+                <%= survey.selectOption1 %>
+                </span>
+
+                <span class="view-survey-select-option">
+                <input type="checkbox" name="selectOption2" id="selectCheckbox">
+                <%= survey.selectOption2 %>
+                </span>
+
+                <span class="view-survey-select-option">
+                <input type="checkbox" name="selectOption3" id="selectCheckbox">
+                <%= survey.selectOption3 %>
+                </span>
+
+                <!-- Rating -->
+                <br><hr>
+                <span id="headerLabel">
+                <label for="rating"><%= survey.mcqTitle %></label>
+                <label for="rating" id="paddingLabel"></label>
+                <label for="rating" id="ratingLabel"><%= survey.mcqOption1 %></label>
+                <label for="rating" id="ratingLabel"><%= survey.mcqOption2 %></label>
+                <label for="rating" id="ratingLabel"><%= survey.mcqOption3 %></label>
+                <label for="rating" id="ratingLabel"><%= survey.mcqOption4 %></label>
+                </span>
+                <hr>
+                <span class="view-MCQ-title"><%= survey.mcqTitle1 %></span>
+                <input type="radio" value=1 name="mcq1" id="ratingRadioButton" required>
+                <input type="radio" value=2 name="mcq1" id="ratingRadioButton">
+                <input type="radio" value=3 name="mcq1" id="ratingRadioButton">
+                <input type="radio" value=4 name="mcq1" id="ratingRadioButton">
+                <hr>
+                <span class="view-MCQ-title"><%= survey.mcqTitle2 %></span>
+                <input type="radio" value=1 name="mcq2" id="ratingRadioButton" required>
+                <input type="radio" value=2 name="mcq2" id="ratingRadioButton">
+                <input type="radio" value=3 name="mcq2" id="ratingRadioButton">
+                <input type="radio" value=4 name="mcq2" id="ratingRadioButton">
+                <hr>
+                <span class="view-MCQ-title"><%= survey.mcqTitle3 %></span>
+                <input type="radio" value=1 name="mcq3" id="ratingRadioButton" required>
+                <input type="radio" value=2 name="mcq3" id="ratingRadioButton">
+                <input type="radio" value=3 name="mcq3" id="ratingRadioButton">
+                <input type="radio" value=4 name="mcq3" id="ratingRadioButton">
+                <hr>
+                <span class="view-MCQ-title"><%= survey.mcqTitle4 %></span>
+                <input type="radio" value=1 name="mcq4" id="ratingRadioButton" required>
+                <input type="radio" value=2 name="mcq4" id="ratingRadioButton">
+                <input type="radio" value=3 name="mcq4" id="ratingRadioButton">
+                <input type="radio" value=4 name="mcq4" id="ratingRadioButton">
+                <hr>
 
 
                 <button class="btn btn-primary" type="submit">
@@ -73,7 +81,6 @@
                 <a href="/home" class="btn btn-warning">
                     <i class="fas fa-undo"></i> Cancel 
                 </a>
-                <br><br><br><br>
             </form>
         </div>
     </div>

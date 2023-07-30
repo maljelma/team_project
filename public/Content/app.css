@@ -1,4 +1,5 @@
 /* Custom css goes here */
+/* Home Page */
 #survey_open_button
 {
     display: grid;
@@ -36,4 +37,69 @@
     grid-column: 3 / 4;
     grid-row: 2;
     text-align: right;
+}
+
+/* Survey View Page */
+#view-page-content
+{
+    display:block;
+    margin-top: 3%;
+    padding-top: 3%;
+    padding-bottom: 1%;
+    background-color: lightgoldenrodyellow;
+    border: 1px solid burlywood;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px darkslategrey;
+}
+.view-survey-title
+{
+    text-align: center;
+    font-size: 26pt;
+}
+.view-survey-owner-name
+{
+    text-align: center;
+}
+.view-survey-start
+{
+    float: left;
+}
+.view-survey-end
+{
+    float: right;
+}
+#ratingRadioButton
+{
+    width: 12%;
+    float:right;
+}
+#ratingLabel
+{
+    float:right;
+    width: 12%;
+    text-align: center;
+    font-size: 10pt;
+}
+
+.view-survey-textfield-title
+{
+    float: left;
+    margin: 0%;
+    padding: 0%;
+    width: 20%;
+}
+#textField
+{
+    float: left;
+    width: 78%;
+}
+.view-select-title
+{
+    float: left;
+    width: 20%;
+}
+.view-survey-select-option
+{
+    width: 25%;
+    float: left;
 }
