@@ -1,10 +1,39 @@
 /* Custom css goes here */
 #survey_open_button
 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(auto, auto);
+    gap: 0px;
     width: 100%;
     background-color: lightgoldenrodyellow;
-    color: darkslategrey;
-    border: 1px solid lightcoral;
+    border: 1px solid darkslategrey;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px darkslategrey;
     font-size: 18pt;
     margin-bottom: 8px;
+    font-family:serif;
+}
+#survey_open_button_title
+{
+    grid-column: 1 / 4;
+    grid-row: 1;
+    font-size: 32pt;
+    text-align: center;
+}
+#survey_open_button_start, #survey_open_button_end
+{
+    font-size: 14pt;
+}
+#survey_open_button_start
+{
+    grid-column: 1 / 4;
+    grid-row: 2;
+    text-align: left;
+}
+#survey_open_button_end
+{
+    grid-column: 3 / 4;
+    grid-row: 2;
+    text-align: right;
 }

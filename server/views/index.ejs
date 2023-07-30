@@ -5,7 +5,7 @@
   <!-- Main Content -->
   <main class="container">
     <div class="jumbotron">
-      <h1 class="display-4">Welcome to the <%= title %> page</h1>
+      <h1 class="display-4">We are happy to hear your voice</h1>
       <!-- Repeatable Template Row -->
       <% for(let count = 0; count < SurveyList.length; count++) { %>
         <a href="/survey/view/<%= SurveyList[count]._id %>" 
@@ -13,8 +13,8 @@
           role="button" 
           id="survey_open_button">
             <div id="survey_open_button_title"><%= SurveyList[count].title %></div>
-            <div id="survey_open_button_start">Start: <%= SurveyList[count].dateStart %></div>
-            <div id="survey_open_button_end">End:<%= SurveyList[count].dateEnd %></div>
+            <div id="survey_open_button_start">Starts: <%= SurveyList[count].dateStart %></div>
+            <div id="survey_open_button_end">Ends:<%= SurveyList[count].dateEnd %></div>
         </a>
         <br>
       <% } %>
